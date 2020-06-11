@@ -60,13 +60,13 @@ public class Login_regiistro {
         return busqueda_nombre;
     }
 
-    public static String buscarUsuarioRegistrado(String correo, String contraseña) {
+    public static String buscarUsuarioRegistrado(String correo, String contraseña,int cargo) {
         String busqueda_usuario = null;
         Connection conexion = null;
 
         try {
             conexion = ConexionBD.conectar();
-            String sentencia_buscar_usuario = ("SELECT nombre,correo,contraseña FROM usuarios WHERE correo = '" + correo + "' && contraseña = '" + contraseña + "'");
+            String sentencia_buscar_usuario = ("SELECT nombre,correo,contraseña FROM usuarios WHERE correo = '" + correo + "' && contraseña = '" + contraseña + "'&&  cargo = '"+cargo+"' ");
             sentencia_preparada = conexion.prepareStatement(sentencia_buscar_usuario);
             resultado = sentencia_preparada.executeQuery();
             if (resultado.next()) {

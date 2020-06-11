@@ -15,26 +15,24 @@ import javax.swing.JOptionPane;
  * @author nanis
  */
 public class ConexionBD {
-     public static String url = "jdbc:mysql://localhost:3307/";
-    public static String usuario = "root";
-    public static String contraseña = "root";
-    public static String clase = "com.mysql.jdbc.Driver";
-
+    static Connection cnx = null;
+    public static void main(String[] args) {
+        conectar();
+    }
     public static Connection conectar() {
-        Connection conexion = null;
-
+        
+        
+        
         try {
-            Class.forName(clase);
-            conexion = (Connection) DriverManager.getConnection(url,usuario,contraseña);
-            System.out.println("conexion establecida");
-            JOptionPane.showMessageDialog(null,"Conexion establecida...");
-        } catch (ClassNotFoundException | SQLException e) {
-
-
-            System.out.println(e);
-            JOptionPane.showMessageDialog(null,"Conexion no establecida..." +e.getMessage());
+            Class.forName("com.mysql.jdbc.Driver");
+            cnx = DriverManager.getConnection("jdbc:Mysql://localhost/dbtienda?user=root&password=");
+            //JOptionPane.showMessageDialog(null, "Conectado"); cnx = DriverManager.getConnection("jdbc:Mysql://localhost/login_bd?user=root&password=");
+            //JOptionPane.showMessageDial
+JOptionPane.showMessageDialog(null, "Conectado");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "error al conectar");
         }
-        return conexion;
+        return cnx;
     }
    //
 }

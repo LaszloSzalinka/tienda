@@ -8,6 +8,8 @@ package login_registro;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import metodos_sql.Login_regiistro;
 
 /**
  *
@@ -195,9 +197,25 @@ public class Login extends javax.swing.JFrame {
     private void txtusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtusuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtusuarioActionPerformed
-
+Login_regiistro metodos = new Login_regiistro();
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        // TODO add your handling code here:
+         String opcion = (String)cbArea1.getSelectedItem();
+         int cargo=0;
+         String busquedaUsuario = metodos.buscarUsuarioRegistrado(txtusuario.getText(), txtpassword1.getText(),cargo);
+      if(opcion.equals("Area Ventas")){
+            cargo = 1;
+        }else if(opcion.equals("Area Compras")){
+            cargo = 2;
+        }else if(opcion.equals("Area Nomina")){
+            cargo = 3;
+        }else if(opcion.equals("Area Nomina")){
+            cargo = 4;
+        }
+      if (busquedaUsuario.equals("usuario encontrado")){
+          
+      }
+    }
+        /* switch(opcion){
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
