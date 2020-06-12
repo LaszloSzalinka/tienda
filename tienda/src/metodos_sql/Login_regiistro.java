@@ -15,7 +15,7 @@ public class Login_regiistro {
     public static String sql;
     public static int resultado_numero = 0;
 
-    public int guardar(String nombre, String apellidos, String correo, String contraseña) {
+    public int guardar(String nombre, String apellido, String usuario, String contraseña,int cargo) {
         int resultado = 0;
         Connection conexion = null;
 
@@ -25,9 +25,10 @@ public class Login_regiistro {
             conexion = ConexionBD.conectar();
             sentencia_preparada = conexion.prepareStatement(sentencia_guardar);
             sentencia_preparada.setString(1, nombre);
-            sentencia_preparada.setString(2, apellidos);
-            sentencia_preparada.setString(3, correo);
+            sentencia_preparada.setString(2, apellido);
+            sentencia_preparada.setString(3, usuario);
             sentencia_preparada.setString(4, contraseña);
+            sentencia_preparada.setInt(5, cargo);
             resultado = sentencia_preparada.executeUpdate();
             sentencia_preparada.close();
             conexion.close();
@@ -60,24 +61,25 @@ public class Login_regiistro {
         return busqueda_nombre;
     }
 
-    public static String buscarUsuarioRegistrado(String correo, String contraseña,int cargo) {
+    public static String buscarUsuarioRegistrado(String usuario, String contraseña,int area) { //recibe el usuario, la contraseña y el area
         String busqueda_usuario = null;
         Connection conexion = null;
 
         try {
             conexion = ConexionBD.conectar();
-            String sentencia_buscar_usuario = ("SELECT nombre,correo,contraseña FROM usuarios WHERE correo = '" + correo + "' && contraseña = '" + contraseña + "'&&  cargo = '"+cargo+"' ");
+            //ese es el codigo sql para verificar en la base de datos los datos
+            String sentencia_buscar_usuario = ("SELECT nombre,contraseña,area FROM usuarios WHERE usuario = '" + usuario + "' && contraseña = '" + contraseña + "'&&  area = '"+area+"' ");
             sentencia_preparada = conexion.prepareStatement(sentencia_buscar_usuario);
             resultado = sentencia_preparada.executeQuery();
-            if (resultado.next()) {
+            if (resultado.next()) { //si el susuario se encuentra entonces la variable busqueda_usuario tendra el valor usuario encontrado
                 busqueda_usuario = "usuario encontrado";
-            } else {
+            } else {//esta es la validación que se realiza en la interfaz del login
                 busqueda_usuario = "usuario no encontrado";
             }
             conexion.close();
         } catch (Exception e) {
             System.out.println(e);
         }
-        return busqueda_usuario;
+        return busqueda_usuario; //devuelve ese valor a la interfaz del login 
     }
 }

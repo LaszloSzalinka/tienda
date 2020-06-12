@@ -16,9 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class ConexionBD {
     static Connection cnx = null;
-    public static void main(String[] args) {
-        conectar();
-    }
+   
     public static Connection conectar() {
         
         
@@ -28,7 +26,7 @@ public class ConexionBD {
             cnx = DriverManager.getConnection("jdbc:Mysql://localhost/dbtienda?user=root&password=");
             //JOptionPane.showMessageDialog(null, "Conectado"); cnx = DriverManager.getConnection("jdbc:Mysql://localhost/login_bd?user=root&password=");
             //JOptionPane.showMessageDial
-JOptionPane.showMessageDialog(null, "Conectado");
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "error al conectar");
         }
