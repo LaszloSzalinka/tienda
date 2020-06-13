@@ -8,6 +8,8 @@ package login_registro;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import metodos_sql.Login_regiistro;
 
 /**
  *
@@ -62,17 +64,18 @@ public class registro extends javax.swing.JFrame {
         });
 
         btnRegistrarme.setText("Registrarme");
+        btnRegistrarme.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarmeActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nombre:");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Apellido:");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Usuario:");
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Contraseña:");
 
         cbAreas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Area Ventas", "Area Compras", "Area Nomina", "Area Contratos" }));
@@ -84,7 +87,6 @@ public class registro extends javax.swing.JFrame {
 
         btnCancelar.setText("Cancelar");
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Area:");
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 0));
@@ -207,7 +209,7 @@ public class registro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+Login_regiistro metodos = new Login_regiistro();
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
@@ -215,6 +217,15 @@ public class registro extends javax.swing.JFrame {
     private void cbAreasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbAreasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbAreasActionPerformed
+
+    private void btnRegistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarmeActionPerformed
+     int i = metodos.guardar(txtNombre.getText(), txtApellido.getText(), txtUsuario.getText(), txtpassword.getText(),cbAreas.getSelectedIndex());
+        if (i > 0) {
+            JOptionPane.showMessageDialog(this, "Datos Guardados Correctamente");
+        } else {
+            JOptionPane.showMessageDialog(this, "No se pudo guardar los datos");
+        }
+    }//GEN-LAST:event_btnRegistrarmeActionPerformed
 
     /**
      * @param args the command line arguments

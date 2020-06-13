@@ -15,11 +15,11 @@ public class Login_regiistro {
     public static String sql;
     public static int resultado_numero = 0;
 
-    public int guardar(String nombre, String apellido, String usuario, String contraseña,int cargo) {
+    public int guardar(String nombre, String apellido, String usuario, String contraseña,int area) {
         int resultado = 0;
         Connection conexion = null;
 
-        String sentencia_guardar = ("INSERT INTO usuarios (nombre,apellidos,correo,contraseña) VALUES (?,?,?,?)");
+        String sentencia_guardar = ("INSERT INTO usuarios (nombre,apellido,usuario,contraseña,area) VALUES (?,?,?,?,?)");
 
         try {
             conexion = ConexionBD.conectar();
@@ -28,7 +28,7 @@ public class Login_regiistro {
             sentencia_preparada.setString(2, apellido);
             sentencia_preparada.setString(3, usuario);
             sentencia_preparada.setString(4, contraseña);
-            sentencia_preparada.setInt(5, cargo);
+            sentencia_preparada.setInt(5, area);
             resultado = sentencia_preparada.executeUpdate();
             sentencia_preparada.close();
             conexion.close();
