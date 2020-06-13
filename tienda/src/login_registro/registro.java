@@ -224,7 +224,7 @@ Login_regiistro metodos = new Login_regiistro();
     }//GEN-LAST:event_cbAreasActionPerformed
 
     private void btnRegistrarmeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarmeActionPerformed
-     int i = metodos.guardar(txtNombre.getText(), txtApellido.getText(), txtUsuario.getText(), txtpassword.getText(),cbAreas.getSelectedIndex());
+     int i = metodos.guardar(txtNombre.getText(), txtApellido.getText(), txtUsuario.getText(), txtpassword.getText(),(int) cbAreas.getSelectedItem());
         if (i > 0) {
             JOptionPane.showMessageDialog(this, "Datos Guardados Correctamente");
         } else {

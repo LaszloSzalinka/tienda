@@ -213,15 +213,40 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_txtusuarioActionPerformed
 Login_regiistro metodos = new Login_regiistro();
     private void btnIngresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresar1ActionPerformed
-        // TODO add your handling code here:
+        String opcion = (String)cbArea1.getSelectedItem(); // <--- obtiene el valor del combobox
+
+         int area=0; // variable entera para verificar el area
+      if(opcion.equals("Area Ventas")){ //si seleccionaron AREA VENTAS en el combobox entonces area vale 1
+            area = 1;
+        }else if(opcion.equals("Area Compras")){//si seleccionaron AREA COMPRAS en el combobox entonces area vale 2
+            area = 2;
+        }else if(opcion.equals("Area Nomina")){//si seleccionaron AREA NOMINA en el combobox entonces area vale 3
+            area = 3;
+        }else if(opcion.equals("Area Contratos")){//si seleccionaron AREA CONTRATOS en el combobox entonces area vale 4
+            area = 4;
+        }
+      //String busquedaUsuario toma y guarda los valores que fueron ingresados en las cajas de texto y combobox 
+    String busquedaUsuario = metodos.buscarUsuarioRegistrado(txtusuario.getText(), txtpassword1.getText(),area);
+    //el metodo buscarUsuarioRegistrado se encuentra en el archivo login_registro
+      if (busquedaUsuario.equals("usuario encontrado") && opcion.equals("Area Ventas")){ //si el usuario existe en la base de datos y dependiendo el numero puede ingresar a cierta area
+          String busquedaNombre = metodos.buscarNombre(txtusuario.getText()); //esto todavia no sirve pero es para que muestre el nombre de la persona que inicia sesión
+        JOptionPane.showMessageDialog(null, "bienvenido al modulo de ventas"); //aca se reemplazaria el mensaje por los modulos que van a hacer los demas
+      }else if(busquedaUsuario.equals("usuario encontrado") && opcion.equals("Area Compras")){
+          JOptionPane.showMessageDialog(null, "bienvenido al modulo de Compras");
+      }else if(busquedaUsuario.equals("usuario encontrado") && opcion.equals("Area Nomina")){
+          JOptionPane.showMessageDialog(null, "bienvenido al modulo de Nomina");
+      }else if(busquedaUsuario.equals("usuario encontrado") && opcion.equals("Area Contratos")){
+          JOptionPane.showMessageDialog(null, "bienvenido al modulo de Contratos");
+      }else{
+          JOptionPane.showMessageDialog(null, "Usuario o contraseña incorectos"); //si escribe algun dato mal le mostrara este mensaje
+      }
+    
     }//GEN-LAST:event_btnIngresar1ActionPerformed
 
     private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
-        registro registro = new registro();
-        registro.setVisible(true);
-        this.dispose();
-        
-        
+       registro r = new registro();
+       r.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     /**
