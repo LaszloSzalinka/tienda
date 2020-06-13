@@ -42,6 +42,7 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jProgressBar1 = new javax.swing.JProgressBar();
         jPanel1 = new javax.swing.JPanel();
         lbuser1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -50,9 +51,10 @@ public class Login extends javax.swing.JFrame {
         lbseguro = new javax.swing.JLabel();
         txtusuario = new javax.swing.JTextField();
         txtpassword1 = new javax.swing.JPasswordField();
-        btnIngresar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        btnIngresar1 = new javax.swing.JButton();
+        btnRegistrarse = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,15 +80,6 @@ public class Login extends javax.swing.JFrame {
         txtusuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtusuarioActionPerformed(evt);
-            }
-        });
-
-        btnIngresar.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
-        btnIngresar.setText("Ingresar");
-        btnIngresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
-        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIngresarActionPerformed(evt);
             }
         });
 
@@ -116,6 +109,23 @@ public class Login extends javax.swing.JFrame {
             .addGap(0, 23, Short.MAX_VALUE)
         );
 
+        btnIngresar1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
+        btnIngresar1.setText("Ingresar");
+        btnIngresar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        btnIngresar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresar1ActionPerformed(evt);
+            }
+        });
+
+        btnRegistrarse.setFont(new java.awt.Font("Eras Bold ITC", 0, 14)); // NOI18N
+        btnRegistrarse.setText("Registrarse");
+        btnRegistrarse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -124,9 +134,6 @@ public class Login extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,16 +148,21 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(jLabel1)))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 51, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(cbArea1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(93, 93, 93))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(lbuser1)
-                        .addGap(110, 110, 110))))
+                        .addGap(110, 110, 110))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnIngresar1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnRegistrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,8 +182,10 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(txtpassword1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(cbArea1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(btnIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnIngresar1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(btnRegistrarse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -198,39 +212,17 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtusuarioActionPerformed
 Login_regiistro metodos = new Login_regiistro();
-    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-         
+    private void btnIngresar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIngresar1ActionPerformed
+
+    private void btnRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarseActionPerformed
+        registro registro = new registro();
+        registro.setVisible(true);
+        this.dispose();
         
-        String opcion = (String)cbArea1.getSelectedItem(); // <--- obtiene el valor del combobox
         
-         int area=0; // variable entera para verificar el area
-      if(opcion.equals("Area Ventas")){ //si seleccionaron AREA VENTAS en el combobox entonces area vale 1
-            area = 1;
-        }else if(opcion.equals("Area Compras")){//si seleccionaron AREA COMPRAS en el combobox entonces area vale 2
-            area = 2;
-        }else if(opcion.equals("Area Nomina")){//si seleccionaron AREA NOMINA en el combobox entonces area vale 3
-            area = 3;
-        }else if(opcion.equals("Area Contratos")){//si seleccionaron AREA CONTRATOS en el combobox entonces area vale 4
-            area = 4;
-        }
-      //String busquedaUsuario toma y guarda los valores que fueron ingresados en las cajas de texto y combobox 
-    String busquedaUsuario = metodos.buscarUsuarioRegistrado(txtusuario.getText(), txtpassword1.getText(),area);
-    //el metodo buscarUsuarioRegistrado se encuentra en el archivo login_registro
-      if (busquedaUsuario.equals("usuario encontrado") && opcion.equals("Area Ventas")){ //si el usuario existe en la base de datos y dependiendo el numero puede ingresar a cierta area
-          String busquedaNombre = metodos.buscarNombre(txtusuario.getText()); //esto todavia no sirve pero es para que muestre el nombre de la persona que inicia sesión
-        JOptionPane.showMessageDialog(null, "bienvenido al modulo de ventas"); //aca se reemplazaria el mensaje por los modulos que van a hacer los demas
-      }else if(busquedaUsuario.equals("usuario encontrado") && opcion.equals("Area Compras")){
-          JOptionPane.showMessageDialog(null, "bienvenido al modulo de Compras");
-      }else if(busquedaUsuario.equals("usuario encontrado") && opcion.equals("Area Nomina")){
-          JOptionPane.showMessageDialog(null, "bienvenido al modulo de Nomina");
-      }else if(busquedaUsuario.equals("usuario encontrado") && opcion.equals("Area Contratos")){
-          JOptionPane.showMessageDialog(null, "bienvenido al modulo de Contratos");
-      }else{
-          JOptionPane.showMessageDialog(null, "Usuario o contraseña incorectos"); //si escribe algun dato mal le mostrara este mensaje
-      }
-    }
-        /* switch(opcion){
-    }//GEN-LAST:event_btnIngresarActionPerformed
+    }//GEN-LAST:event_btnRegistrarseActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,12 +261,14 @@ Login_regiistro metodos = new Login_regiistro();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btnIngresar1;
+    private javax.swing.JButton btnRegistrarse;
     private javax.swing.JComboBox<String> cbArea1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JLabel lbseguro;
     private javax.swing.JLabel lbuser;
     private javax.swing.JLabel lbuser1;

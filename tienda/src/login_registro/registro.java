@@ -85,7 +85,12 @@ public class registro extends javax.swing.JFrame {
             }
         });
 
-        btnCancelar.setText("Cancelar");
+        btnCancelar.setText("Volver");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("Area:");
 
@@ -226,6 +231,12 @@ Login_regiistro metodos = new Login_regiistro();
             JOptionPane.showMessageDialog(this, "No se pudo guardar los datos");
         }
     }//GEN-LAST:event_btnRegistrarmeActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        Login login = new Login();
+        login.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
